@@ -47,7 +47,7 @@ public class ServiceExamen implements IServiceExamen{
     @Override
     public ObservableList<examen> AfficherExamen()throws SQLException{
        
-            Statement stm= cnx.createStatement();
+         Statement stm= cnx.createStatement();
         
         String query="select * from examen";
         ResultSet rst =stm.executeQuery(query);

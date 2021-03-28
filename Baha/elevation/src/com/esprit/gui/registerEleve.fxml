@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorid" prefHeight="644.0" prefWidth="940.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.gui.RegisterEleveController">
+   <children>
+      <Label layoutX="43.0" layoutY="31.0" prefHeight="25.0" prefWidth="217.0" text="INFORMATION ELEVE" textFill="#48a5ea">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Separator layoutX="43.0" layoutY="68.0" prefHeight="3.0" prefWidth="812.0" />
+      <Label id="btn_exit" fx:id="btn_exit" layoutX="916.0" layoutY="1.0" onMousePressed="#handleButtonAction" prefHeight="30.0" prefWidth="22.0" text="X" textFill="#48a5ea">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <VBox layoutX="39.0" layoutY="91.0" prefHeight="483.0" prefWidth="438.0" spacing="20.0">
+         <children>
+            <JFXTextField fx:id="tnom" focusColor="#49aee5" prefHeight="25.0" prefWidth="217.0" promptText="Nom" />
+            <JFXTextField fx:id="tprenom" focusColor="#48a5ea" prefHeight="25.0" prefWidth="217.0" promptText="Prénom" />
+            <JFXTextField fx:id="tmail" focusColor="#48a5ea" prefHeight="25.0" prefWidth="217.0" promptText="Email " />
+            <JFXTextField fx:id="tmailparent" focusColor="#48a5ea" prefHeight="25.0" prefWidth="217.0" promptText="Email Parent" />
+            <JFXPasswordField fx:id="tmdp" prefHeight="25.0" promptText="mot de passe" />
+            <JFXPasswordField fx:id="tmdp1" prefHeight="25.0" promptText="comfirmer mot de passe" />
+            <JFXTextField fx:id="tnumeroparent" focusColor="#48a5ea" prefHeight="25.0" prefWidth="217.0" promptText="Numéro Parent" />
+            <JFXComboBox fx:id="csexe" focusColor="#48a5ea" prefHeight="25.0" prefWidth="458.0" promptText="sexe" />
+            <JFXComboBox fx:id="cniveau" focusColor="#48a5ea" prefHeight="25.0" prefWidth="452.0" promptText="Niveau" />
+            <JFXDatePicker fx:id="dDate" prefHeight="25.0" prefWidth="448.0" promptText="Date de naissance" />
+         </children>
+      </VBox>
+      <HBox layoutX="42.0" layoutY="578.0" prefHeight="25.0" prefWidth="432.0" spacing="250.0">
+         <children>
+            <JFXButton fx:id="bclear" buttonType="RAISED" onAction="#clear" prefHeight="25.0" prefWidth="94.0" ripplerFill="#dd0b0b" text="Reset All" />
+            <JFXButton fx:id="bconfirmer" onAction="#ajouterEleve" prefHeight="25.0" prefWidth="116.0" style="-fx-background-color: #48A5EA;" text="confirmer" textFill="WHITE" />
+         </children>
+      </HBox>
+      <ImageView fx:id="image" fitHeight="168.0" fitWidth="176.0" layoutX="680.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true" />
+      <JFXButton fx:id="bimporter" layoutX="696.0" layoutY="286.0" onAction="#importerimage" prefHeight="46.0" prefWidth="156.0" style="-fx-background-color: #48A5EA;" text="Importer votre image" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXButton>
+      <VBox layoutX="486.0" layoutY="91.0" opacity="0.0" prefHeight="483.0" prefWidth="232.0" spacing="20.0">
+         <children>
+            <Label fx:id="lblnom" prefHeight="25.0" prefWidth="244.0" text="NOM INCORRECT" textFill="RED">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets top="15.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblprenom" prefHeight="25.0" prefWidth="244.0" text="NOm incorrect" textFill="RED">
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblemail" prefHeight="25.0" prefWidth="244.0" text="Label" textFill="RED">
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblemailparent" prefHeight="25.0" prefWidth="244.0" text="Label" textFill="RED">
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblmdp" prefHeight="25.0" prefWidth="244.0" text="Label" textFill="RED">
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblmdp2" prefHeight="25.0" prefWidth="244.0" text="Label" textFill="RED">
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblnumero" prefHeight="25.0" prefWidth="244.0" text="Label" textFill="RED">
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblsexe" prefHeight="25.0" prefWidth="244.0" text="Label" textFill="RED">
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblniveau" prefHeight="25.0" prefWidth="244.0" text="Label" textFill="RED">
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbldate" prefHeight="25.0" prefWidth="244.0" text="Label" textFill="RED">
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

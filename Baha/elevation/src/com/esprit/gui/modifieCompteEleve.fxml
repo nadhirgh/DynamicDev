@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorid" prefHeight="550.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.gui.ModifieCompteEleveController">
+   <children>
+      <Label layoutX="43.0" layoutY="31.0" prefHeight="25.0" prefWidth="217.0" text="INFORMATION ELEVE" textFill="#48a5ea">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Separator layoutX="43.0" layoutY="59.0" prefHeight="12.0" prefWidth="617.0" />
+      <Label id="btn_exit" fx:id="btn_exit" layoutX="747.0" layoutY="16.0" onMousePressed="#handleButtonAction" opacity="0.0" prefHeight="30.0" prefWidth="22.0" text="X" textFill="#48a5ea">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <VBox layoutX="389.0" layoutY="85.0" prefHeight="364.0" prefWidth="290.0" spacing="20.0">
+         <children>
+            <JFXTextField fx:id="tnom" focusColor="#49aee5" prefHeight="25.0" prefWidth="217.0" promptText="Nom" />
+            <JFXTextField fx:id="tprenom" focusColor="#48a5ea" prefHeight="25.0" prefWidth="217.0" promptText="Prénom" />
+            <JFXTextField fx:id="tmail" focusColor="#48a5ea" prefHeight="25.0" prefWidth="217.0" promptText="Email " />
+            <JFXTextField fx:id="tmailparent" focusColor="#48a5ea" prefHeight="25.0" prefWidth="256.0" promptText="Email Parent" />
+            <JFXPasswordField fx:id="tmdp" prefHeight="25.0" promptText="mot de passe" />
+            <JFXPasswordField fx:id="tmdp1" prefHeight="25.0" promptText="comfirmer mot de passe" />
+            <JFXTextField fx:id="tnumeroparent" focusColor="#48a5ea" prefHeight="25.0" prefWidth="217.0" promptText="Numéro Parent" />
+            <JFXDatePicker fx:id="dDate" prefHeight="25.0" prefWidth="448.0" promptText="Date de naissance" />
+         </children>
+      </VBox>
+      <HBox layoutX="371.0" layoutY="466.0" prefHeight="25.0" prefWidth="325.0" spacing="140.0">
+         <children>
+            <JFXButton fx:id="bclear" buttonType="RAISED" onAction="#clear" prefHeight="25.0" prefWidth="75.0" ripplerFill="#dd0b0b" text="Reset All" />
+            <JFXButton fx:id="bconfirmer" onAction="#ajouterEleve" prefHeight="25.0" prefWidth="103.0" style="-fx-background-color: #48A5EA;" text="Modifier" textFill="WHITE" />
+         </children>
+      </HBox>
+      <ImageView fx:id="image" fitHeight="168.0" fitWidth="176.0" layoutX="15.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true" />
+      <JFXButton fx:id="bimporter" layoutX="25.0" layoutY="313.0" onAction="#importerimage" prefHeight="46.0" prefWidth="156.0" style="-fx-background-color: #48A5EA;" text="modifier votre image" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXButton>
+      <VBox layoutX="275.0" layoutY="85.0" prefHeight="347.0" prefWidth="121.0" spacing="20.0">
+         <children>
+            <Label prefHeight="27.0" prefWidth="125.0" text="Nom" />
+            <Label prefHeight="27.0" prefWidth="152.0" text="Prenom" />
+            <Label prefHeight="27.0" prefWidth="67.0" text="Email" />
+            <Label prefHeight="27.0" prefWidth="140.0" text="Email parent" />
+            <Label prefHeight="27.0" prefWidth="165.0" text="Numéro parent" />
+            <Label prefHeight="27.0" prefWidth="67.0" text="sexe" />
+            <Label prefHeight="27.0" prefWidth="124.0" text="Date de naissence" />
+            <Label prefHeight="27.0" prefWidth="124.0" text="niveau" />
+         </children>
+      </VBox>
+      <VBox layoutX="10.0" layoutY="398.0" prefHeight="30.0" prefWidth="142.0">
+         <children>
+            <Label fx:id="lnom" prefHeight="27.0" prefWidth="147.0" />
+            <Label fx:id="lprenom" prefHeight="27.0" prefWidth="147.0" />
+            <Label fx:id="lemail" prefHeight="27.0" prefWidth="147.0" />
+            <Label fx:id="temailparent" prefHeight="27.0" prefWidth="147.0" />
+            <Label fx:id="lnumeroparent" prefHeight="27.0" prefWidth="147.0" />
+            <Label fx:id="lsexe" prefHeight="27.0" prefWidth="147.0" />
+            <Label fx:id="ldate" prefHeight="27.0" prefWidth="147.0" />
+            <Label fx:id="lniveau" prefHeight="27.0" prefWidth="147.0" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

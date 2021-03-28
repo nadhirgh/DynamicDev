@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="673.0" prefWidth="996.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.gui.MenuController">
+   <children>
+      <AnchorPane layoutX="239.0" prefHeight="109.0" prefWidth="757.0" style="-fx-background-color: #fff;" AnchorPane.leftAnchor="239.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Label fx:id="labelLien" styleClass="titel-textEns" stylesheets="@login2.css" textFill="WHITE" AnchorPane.leftAnchor="252.0" AnchorPane.topAnchor="80.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="-5.0" layoutY="48.0" prefHeight="465.0" prefWidth="44.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+         <children>
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="44.0" spacing="10.0" AnchorPane.topAnchor="20.0">
+               <children>
+                  <ImageView fitHeight="46.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../dash1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="46.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../add1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="46.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../data1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="46.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../icons8_Search_52px.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="46.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../report1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="46.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../add1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="46.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../data1.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pane1" layoutY="-63.0" opacity="0.0" prefHeight="638.0" prefWidth="996.0" style="-fx-background-color: #000;" AnchorPane.bottomAnchor="33.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="2.0" />
+      <AnchorPane prefHeight="676.0" prefWidth="44.0" styleClass="sidebar" stylesheets="@login2.css" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="0.0">
+         <children>
+            <VBox alignment="TOP_CENTER" layoutY="5.0" prefHeight="368.0" prefWidth="44.0" spacing="15.0" AnchorPane.topAnchor="5.0">
+               <children>
+                  <ImageView fx:id="menu" fitHeight="46.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../menu1.png" />
+                     </image>
+                  </ImageView>
+                  <FontAwesomeIcon iconName="HOME" size="2.2em" styleClass="sidebar-btn-icon">
+                     <VBox.margin>
+                        <Insets top="180.0" />
+                     </VBox.margin>
+                  </FontAwesomeIcon>
+                  <FontAwesomeIcon iconName="USERS" size="2.2em" styleClass="sidebar-btn-icon" />
+                  <FontAwesomeIcon iconName="CALENDAR" size="2.2em" styleClass="sidebar-btn-icon" />
+                  <FontAwesomeIcon iconName="TASKS" size="2.2em" styleClass="sidebar-btn-icon" />
+                  <FontAwesomeIcon iconName="BOOK" size="2.2em" styleClass="sidebar-btn-icon" />
+                  <FontAwesomeIcon iconName="EXCLAMATION" size="2.2em" styleClass="sidebar-btn-icon" />
+                  <FontAwesomeIcon iconName="CREDIT_CARD" size="2.2em" styleClass="sidebar-btn-icon" />
+                  <FontAwesomeIcon iconName="SIGN_OUT" size="2.2em" styleClass="sidebar-btn-icon" />
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pane2" prefHeight="673.0" prefWidth="200.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="40.0">
+         <children>
+            <VBox prefHeight="674.0" prefWidth="200.0" spacing="4.0" styleClass="sidebar" stylesheets="@login2.css" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label prefHeight="40.0" prefWidth="117.0" text="  Menu" textFill="#b8b1b1">
+                     <font>
+                        <Font name="System Bold Italic" size="26.0" />
+                     </font>
+                     <padding>
+                        <Insets left="30.0" />
+                     </padding>
+                  </Label>
+                  <ImageView fitHeight="114.0" fitWidth="164.0" pickOnBounds="true" preserveRatio="true">
+                     <VBox.margin>
+                        <Insets left="15.0" />
+                     </VBox.margin>
+                     <image>
+                        <Image url="@../../../user-icon.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="159.0" text="Nadhir Ghn" textFill="#b8b1b1">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Label>
+                  <JFXButton fx:id="btHome" alignment="BASELINE_LEFT" onAction="#homepage" prefHeight="38.0" prefWidth="202.0" styleClass="sidebarbtn" stylesheets="@login2.css" text="Dashboard" textFill="#b8b1b1">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="btUser" alignment="BASELINE_LEFT" onAction="#userpage" prefHeight="38.0" prefWidth="202.0" styleClass="sidebarbtn" stylesheets="@login2.css" text="Utilisateurs" textFill="#b8b1b1">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btEmploi" alignment="BASELINE_LEFT" onAction="#emploipage" prefHeight="38.0" prefWidth="202.0" styleClass="sidebarbtn" stylesheets="@login2.css" text="Emplois" textFill="#b8b1b1">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btExamen" alignment="BASELINE_LEFT" onAction="#examenpage" prefHeight="38.0" prefWidth="202.0" styleClass="sidebarbtn" stylesheets="@login2.css" text="Examen" textFill="#b8b1b1">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btCours" alignment="BASELINE_LEFT" onAction="#courspage" prefHeight="38.0" prefWidth="202.0" styleClass="sidebarbtn" stylesheets="@login2.css" text="Cours" textFill="#b8b1b1">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btReclamation" alignment="BASELINE_LEFT" onAction="#reclamationpage" prefHeight="38.0" prefWidth="202.0" styleClass="sidebarbtn" stylesheets="@login2.css" text="Réclamation" textFill="#b8b1b1">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btFinance" alignment="BASELINE_LEFT" onAction="#financepage" prefHeight="38.0" prefWidth="202.0" styleClass="sidebarbtn" stylesheets="@login2.css" text="Finance" textFill="#b8b1b1">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btLogout" alignment="BASELINE_LEFT" onAction="#sedeconnecterpage" prefHeight="38.0" prefWidth="202.0" styleClass="sidebarbtn" stylesheets="@login2.css" text="se deconnecter" textFill="#b8b1b1">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <BorderPane fx:id="bp" layoutX="243.0" layoutY="117.0" prefHeight="523.0" prefWidth="748.0" />
+      <JFXButton fx:id="btnCompte" layoutX="860.0" layoutY="3.0" onAction="#MonCompte" styleClass="btn-compte" stylesheets="@login2.css" text="Mon compte">
+         <graphic>
+            <FontAwesomeIcon iconName="USER" size="1.5em" />
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>

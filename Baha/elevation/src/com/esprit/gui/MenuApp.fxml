@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+
+<BorderPane fx:id="bp" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.gui.MenuAppController">
+   <center>
+      <AnchorPane fx:id="ap" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="809.0" />
+   </center>
+   <top>
+      <HBox prefHeight="50.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <JFXButton prefHeight="50.0" prefWidth="100.0" styleClass="d" stylesheets="@login2.css" text="Home" />
+            <JFXButton onAction="#page1" prefHeight="50.0" prefWidth="100.0" styleClass="d" stylesheets="@login2.css" text="Classes" />
+            <JFXButton onAction="#page2" prefHeight="50.0" prefWidth="100.0" styleClass="d" stylesheets="@login2.css" text="Séances" />
+            <JFXButton onAction="#page3" prefHeight="50.0" prefWidth="100.0" styleClass="d" stylesheets="@login2.css" text="Statistique" />
+            <JFXButton prefHeight="50.0" prefWidth="100.0" styleClass="d" stylesheets="@login2.css" text="Mail" />
+            <JFXButton prefHeight="50.0" prefWidth="100.0" styleClass="d" stylesheets="@login2.css" />
+         </children>
+      </HBox>
+   </top>
+</BorderPane>

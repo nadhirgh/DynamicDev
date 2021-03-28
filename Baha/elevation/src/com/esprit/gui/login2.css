@@ -1,0 +1,266 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+-fx-background-color: linear-gradient(to top,#c31399,#9118fd);
+}
+
+.btn-login{
+/*-fx-background-color: #9013fb;*/
+-fx-text-fill:#FFF;
+-fx-font-size:15px;
+-fx-font-weight:700;
+-fx-background-radius: 8px;
+-fx-background-color: linear-gradient(to right,#755bea,#ff72c0);
+
+}
+.btn-compte{
+/*-fx-background-color: #9013fb;*/
+-fx-text-fill:#FFF;
+-fx-font-size:15px;
+-fx-font-weight:700;
+-fx-background-radius: 8px;
+-fx-background-color: linear-gradient(to right,#b8b1b1,#b8b1b1);
+
+}
+.lbl-status{
+-fx-background-color:c0139f;
+-fx-text-fill:#FFF;
+-fx-aligment:CENTER;
+-fx-font-size:16px;
+ -fx-background-radius: 8px; 
+}
+.lbl-user{
+-fx-text-fill:black;
+-fx-aligment: CENTER;
+-fx-font-size:16px;
+-fx-font-weight:600;
+}
+
+.tab-pane{
+    
+    -fx-tab-max-height: 0px;
+}
+
+.tab-pane .tab-header-area{
+    visibility: hidden;
+}
+
+.account-bg{
+    -fx-background-color: linear-gradient(to top,#0082bc,#01d8db);
+
+}
+
+/*.combo-box .list-cell {
+    -fx-background-color: #ff92b8;
+    
+}*/
+/*.combo-box{
+    -fx-border-color:#E6E6E6;
+    -fx-border-style:solid;
+    -fx-border-width:1;
+}
+.combo-box .arrow{
+    -fx-background-color:#2478E9;
+}
+.combo-box .arrow-button{
+    -fx-background-color:white;
+    -fx-border-style:none;
+}
+.combo-box .arrow-button{
+    -fx-background-color:white;
+}
+.combo-box .list-cell{
+    -fx-background-color:white;
+} */
+/*.combo-box
+{
+    -fx-background-color : #161616;
+    -fx-border-color:  #515658;
+    -fx-border-radius: 30;
+}
+.combo-box:hover
+{
+    -fx-background-color : #141124;
+    -fx-border-color:  #FFFF;
+    -fx-border-radius: 30;
+}
+.combo-box:pressed
+{
+    -fx-background-color : #141124;
+    -fx-border-color:  #FFFF;
+    -fx-border-radius: 30;
+}*/
+
+.butEns {
+    -fx-text-fill: white;
+    -fx-font-family: "Arial Narrow";
+    -fx-font-weight: bold;
+    -fx-background-color: linear-gradient(#0083B0, #00B4DB);
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+.butEns:hover {
+    -fx-background-color: linear-gradient(#00B4DB, #0083B0);
+}
+
+
+
+
+.table-view .column-header,
+.table-view .column-header-background .filler {
+    -fx-background-color:  #0082bc; 
+}
+.table-view .column-header .label{
+   -fx-text-fill: white;
+   -fx-font-weight: bold; 
+   -fx-alignment: CENTER_LEFT;
+}
+.table-view .cell{
+   -fx-cell-size: 35;
+  -fx-alignment: center-left;
+/*  -fx-background-color: #0082bc;
+  -fx-border-color: #0082bc;*/
+/*  -fx-text-fill: lightgray;*/
+  -fx-alignment: CENTER_LEFT;
+   
+}
+.table-row-cell:selected {
+   -fx-background-color: #0082bc; 
+/*   -fx-text-background-color:  #fff;*/
+   
+       
+}
+/* The increment and decrement button CSS class of scrollbar */
+.table-view .increment-button ,.table-view .decrement-button {
+    -fx-background-color:transparent;
+	-fx-background-radius: 2em;
+
+}
+
+/* The main scrollbar **track** CSS class  */
+.table-view .scroll-bar:horizontal .track,
+.table-view .scroll-bar:vertical .track{
+	-fx-background-color: transparent;
+	-fx-border-color:derive( #48b1bf,80%);
+
+	-fx-background-radius: 2em;
+	-fx-border-radius:2em;
+}
+.sidebar-btn-icon{
+    -fx-fill: #b8b1b1;
+}
+
+
+/* The main scrollbar **thumb** CSS class which we drag every time (movable) */
+.table-view .scroll-bar:horizontal .thumb,
+.table-view .scroll-bar:vertical .thumb {
+    -fx-background-color:derive( #48b1bf,90%);
+	-fx-background-insets: 2, 0, 0;
+	-fx-background-radius: 2em;
+
+}
+.sidebarbtn{
+    -fx-background-color: transparent;
+    -fx-background-radius: 0px;
+    -fx-text-fill: #b8b1b1;
+}
+.sidebarbtn:hover{
+    -fx-background-color: transparent;
+    -fx-background-radius: 0px;
+    -fx-text-fill: #b8b1b1;
+    -fx-border-color: rgb(22,169,250);
+    -fx-border-width: 0px 0px 0px 3px;
+}
+.check-box .box {
+
+-fx-background-color: white;
+-fx-border-color:grey;
+-fx-border-radius:3px; 
+
+}
+
+.check-box:selected .mark {
+
+-fx-background-color: white;
+
+}
+
+.check-box:selected .box {
+
+-fx-background-color: #28a3f4;
+}
+
+.round-red {
+    -fx-background-color: linear-gradient(#06beb6, #48b1bf);
+    -fx-background-radius: 10;
+    -fx-background-insets: 0;
+    -fx-text-fill: black;
+}
+
+.region{
+    -fx-background-color: darkslateblue;
+    -fx-inner-border-horizontal:blue;
+ 
+ 
+ 
+}
+ .sidebar{
+    -fx-background-color: rgb(58,69,88);
+}
+.regionIa{
+    -fx-background-color: yellowgreen;
+    -fx-background-radius: 100em;
+    -fx-background-insets: 5;
+ 
+ 
+}
+
+.regionUser{
+ 
+    -fx-background-radius: 100em;
+    -fx-background-color: black;
+    -fx-background-insets: 5;
+ 
+}
+
+.regionMurh{
+    -fx-top-border-color: linear-gradient(from 0% 0% to 0% 100%, #38528B 10%, black 10%);
+    -fx-border-inset: 30;
+}
+
+.side-menu{
+    
+   -fx-background-color:#0e1e75; 
+}
+.side-menu-button{
+    
+   -fx-background-color:#0e1e75; 
+   -fx-background-radius:0px;
+   -fx-border-radius:0px;
+   -fx-border-width:0px;
+   -fx-border-style:none;
+   -fx-text-fill:white;
+   -fx-pref-width:150;
+   -fx-pref-height:50;
+   -fx-cursor:hand;
+   -fx-aligment:CENTER_LEFT;
+
+}
+.side-menu-button:hover{
+    -fx-background-color:#01d8db;    
+}
+
+.d:hover{
+ -fx-border-color:#01d8db;
+ -fx-border-width: 0px 0px 3px 0px;
+    
+}
+
+.titel-textEns2 {
+   -fx-font-size: 40px;
+   -fx-font-family: "Arial Black";
+   -fx-fill: #818181;
+   -fx-effect: innershadow( three-pass-box , #01d8db , 6, 0.0 , 0 , 2 );
+}
+

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="630.0" prefWidth="770.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/15.0.1" fx:controller="com.esprit.gui.GestionuserController">
+   <children>
+      <TableView layoutX="28.0" layoutY="199.0" prefHeight="379.0" prefWidth="297.0">
+        <columns>
+          <TableColumn prefWidth="296.0" text="C1" />
+        </columns>
+      </TableView>
+      <TableView layoutX="442.0" layoutY="199.0" prefHeight="379.0" prefWidth="297.0">
+         <columns>
+            <TableColumn prefWidth="296.0" text="C1" />
+         </columns>
+      </TableView>
+      <JFXButton layoutX="345.0" layoutY="354.0" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #1fdd5e;" text="Affecter" textFill="WHITE" />
+      <JFXComboBox layoutX="477.0" layoutY="125.0" prefHeight="25.0" prefWidth="250.0" />
+   </children>
+</AnchorPane>

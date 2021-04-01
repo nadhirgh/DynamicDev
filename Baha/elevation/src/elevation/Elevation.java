@@ -5,6 +5,9 @@
  */
 package elevation;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -16,15 +19,29 @@ import javafx.stage.Stage;
  * @author infoplus
  */
 public class Elevation extends Application {
-    
+    private Stage primaryStage;
+    private Parent parentPage;
     @Override
-    public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+    public void start(Stage primaryStage) {
+        /*stage=new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("views/FXMLHome.fxml"));
         
         Scene scene = new Scene(root);
         
         stage.setScene(scene);
-        stage.show();
+        stage.show();*/
+        this.primaryStage = primaryStage;
+        this.primaryStage.setTitle("Acceuil");
+        try {
+            parentPage = FXMLLoader.load(getClass().getResource("/views/login.fxml"));
+        } catch (IOException ex) {
+            System.out.println("txx");
+            Logger.getLogger(Elevation.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        Scene scene = new Scene(parentPage);
+        this.primaryStage.setScene(scene);
+        this.primaryStage.show();
     }
 
     /**

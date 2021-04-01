@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1195.0" stylesheets="@dashbord.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.FXMLDocumentController">
+   <top>
+      <HBox style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" maxWidth="-Infinity" prefWidth="150.0" style="-fx-background-color: #FF5733;">
+               <children>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="cursor_hand" text="Elevation">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Eras Bold ITC" size="26.0" />
+                     </font>
+                  </Text>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox alignment="CENTER" />
+                  <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                     <children>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" styleClass="cursor_hand">
+                           <image>
+                              <Image url="@../images/notif.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitWidth="32.0" pickOnBounds="true" preserveRatio="true" styleClass="cursor_hand">
+                           <image>
+                              <Image url="@../images/admin1.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bolder;" styleClass="cursor_hand" text="Admin">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Text>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" styleClass="cursor_hand">
+                           <image>
+                              <Image url="@../images/down.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+   </top>
+   <left>
+      <VBox maxWidth="-Infinity" prefHeight="580.0" prefWidth="166.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <children>
+            <HBox fx:id="Exams" alignment="CENTER_LEFT" style="-fx-background-color: #EAE8E6;" styleClass="hover-border-color">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <children>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/events.png" />
+                     </image>
+                  </ImageView>
+                  <Text onMouseClicked="#movetoexamen" strokeType="OUTSIDE" strokeWidth="0.0" style="&lt;font-style&gt;: Quicksand; -fx-font-weight: bold; -fx-fill: #485460;" text="Gestion Exams">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" onMouseClicked="#movetonote" styleClass="hover-border-color">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <children>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/cours.png" />
+                     </image>
+                  </ImageView>
+                  <Text onMouseClicked="#movetonote" strokeType="OUTSIDE" strokeWidth="0.0" style="&lt;font-style&gt;: Quicksand; -fx-font-weight: bold; -fx-fill: #485460;" text="gestion Note">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" onMouseClicked="#movetofront" styleClass="hover-border-color">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <children>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/users.png" />
+                     </image>
+                  </ImageView>
+                  <Text onMouseClicked="#movetofront" strokeType="OUTSIDE" strokeWidth="0.0" style="&lt;font-style&gt;: Quicksand; -fx-font-weight: bold; -fx-fill: #485460;" text="Front User">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <VBox VBox.vgrow="ALWAYS">
+               <children>
+                  <HBox alignment="CENTER_LEFT" styleClass="hover-border-color">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <children>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/settings.png" />
+                           </image>
+                        </ImageView>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="&lt;font-style&gt;: Quicksand; -fx-font-weight: bold; -fx-fill: #485460;" text="paramétres">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="50.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox prefHeight="580.0" prefWidth="1074.0" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+         <children>
+            <HBox alignment="CENTER" prefHeight="511.0" prefWidth="1058.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <AnchorPane id="AnchorPane" prefHeight="526.0" prefWidth="1002.0">
+                     <children>
+                        <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
+                        <TextField fx:id="tfmatiere" layoutX="146.0" layoutY="90.0" />
+                        <TextField fx:id="tfdureeex" layoutX="146.0" layoutY="145.0" />
+                        <Label layoutX="45.0" layoutY="94.0" text="Matiere" />
+                        <Label layoutX="45.0" layoutY="149.0" text="Duree examen" />
+                        <Label layoutX="45.0" layoutY="208.0" text="Date examen" />
+                        <Button id="sale" fx:id="AjouterExamen" layoutX="86.0" layoutY="376.0" mnemonicParsing="false" onAction="#AjouterExamen" prefHeight="47.0" prefWidth="94.0" stylesheets="@stylesheet00.css" text="Ajouter" />
+                        <DatePicker fx:id="tfdateex" layoutX="148.0" layoutY="204.0" />
+                        <TableView fx:id="tableId" layoutX="387.0" layoutY="64.0" prefHeight="374.0" prefWidth="602.0" style="-fx-border-color: #85C1E9;">
+                           <columns>
+                              <TableColumn fx:id="tb_ex_id" prefWidth="97.60003662109375" style="-fx-background-color: #AED6F1;" text="Examen id" />
+                              <TableColumn fx:id="tb_mt_id" prefWidth="99.20001220703125" style="-fx-background-color: #AED6F1;" text="Matiere id" />
+                              <TableColumn fx:id="tb_nm_mt" prefWidth="129.5999755859375" style="-fx-background-color: #AED6F1;" text="Nom matiere" />
+                              <TableColumn fx:id="tb_ex_du" prefWidth="110.4000244140625" style="-fx-background-color: #AED6F1;" text="Duree examen" />
+                              <TableColumn fx:id="tb_dt_ex" prefWidth="182.39990234375" style="-fx-background-color: #AED6F1;" text="Date examen" />
+                           </columns>
+                        </TableView>
+                        <Button id="sale" layoutX="213.0" layoutY="377.0" mnemonicParsing="false" onAction="#modifierExamen" prefHeight="46.0" prefWidth="98.0" stylesheets="@stylesheet00.css" text="Modifier" />
+                        <Button id="sale" layoutX="138.0" layoutY="445.0" mnemonicParsing="false" onAction="#deleteAction" prefHeight="47.0" prefWidth="114.0" stylesheets="@stylesheet00.css" text="Supprimer" />
+                        <Button id="sale" fx:id="addfile" layoutX="25.0" layoutY="287.0" mnemonicParsing="false" onAction="#AddPDF" stylesheets="@stylesheet00.css" text="Add File" />
+                        <TextArea fx:id="listview" layoutX="148.0" layoutY="270.0" prefHeight="76.0" prefWidth="200.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

@@ -14,10 +14,36 @@ import java.sql.Date;
 public class examen {
     private int id_examen;
     private int id_matiere;
-    private String nom_matiere;
+    public String nom_matiere;
     private int id_note;
     private Date date_ex;
     private String duree_ex;
+    private String PDF;
+    private int inscription;
+
+    public int getInscription() {
+        return inscription;
+    }
+
+    public void setInscription(int inscription) {
+        this.inscription = inscription;
+    }
+
+    public String getPDF() {
+        return PDF;
+    }
+
+    public void setPDF(String PDF) {
+        this.PDF = PDF;
+    }
+
+    public examen(int id_matiere, String nom_matiere, int id_note) {
+        this.id_matiere = id_matiere;
+        this.nom_matiere = nom_matiere;
+        this.id_note = id_note;
+    }
+    
+    
 
     public examen() {
     }
@@ -46,13 +72,7 @@ public class examen {
         this.nom_matiere = nom_matiere;
     }
 
-    public int getId_note() {
-        return id_note;
-    }
-
-    public void setId_note(int id_note) {
-        this.id_note = id_note;
-    }
+   
 
     public Date getDate_ex() {
         return date_ex;

@@ -17,7 +17,15 @@ public class Recommendation {
     String Sujet ;
     String Comment ;
     String Etat ;
+    Utilisiateur User;
 
+    public Utilisiateur getUser() {
+        return User;
+    }
+
+    public void setUser(Utilisiateur User) {
+        this.User = User;
+    }
     
     public void remplirRecommendation(Recommendation d) {
         id = d.getId();

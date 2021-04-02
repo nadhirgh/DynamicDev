@@ -8,6 +8,7 @@ package Services;
 import IServices.IService;
 import Entities.Recommendation;
 import Utils.Maconnexion;
+import Utils.Session;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -31,7 +32,7 @@ public class RecommendationService implements IService<Recommendation>{
     private PreparedStatement preStm;
 
     private final String reqGet = " SELECT id , Sujet , Comment , Etat , Date From Recommendation ";
-    private final String reqInsert = "INSERT INTO `Recommendation`(Sujet , Comment , Etat , Date) VALUES (?,?,?,?)";
+    private final String reqInsert = "INSERT INTO `Recommendation`(Sujet , Comment , Etat , Date , idUtilisateur) VALUES (?,?,?,?,?)";
     private final String reqUpdate = "UPDATE `Recommendation` SET `Sujet`=?,`Comment`=?,`Etat`=? WHERE `id`= ? ";
     private final String reqDel = "delete from Recommendation where id=?";
 
@@ -51,6 +52,7 @@ public class RecommendationService implements IService<Recommendation>{
             preStm.setString(2, entite.getComment());
             preStm.setString(3, entite.getEtat());
             preStm.setDate(4, (Date) entite.getDate());
+            preStm.setInt(5, entite.getUser().getId());
             preStm.execute();
         } catch (SQLException ex) {
             Logger.getLogger(RecommendationService.class.getName()).log(Level.SEVERE, null, ex);
@@ -136,8 +138,27 @@ public class RecommendationService implements IService<Recommendation>{
         }
     }
     
-     
-    
+    public List<Recommendation> RecommendationsByUser() {
+        List<Recommendation> Ann= new ArrayList<>();    
+        try {
+            stm=cnx.getConnection().createStatement();
+            ResultSet rs =stm.executeQuery(reqGet + " where idUtilisateur = " + Session.getConnectedUser().getId());
+            while(rs.next())
+            {
+                Recommendation d = new Recommendation();
+                d.setId(rs.getInt(1));
+                d.setSujet(rs.getString(2));
+               d.setComment(rs.getString(3));              
+                d.setEtat(rs.getString(4));
+                d.setDate(rs.getDate(5));
+                Ann.add(d);}
+                return Ann;
+            } 
+        catch (SQLException ex) {
+             System.out.println("erreur lors de l'affichage de toutes les annonces " + ex.getMessage());
+        }
+        return null;
+    }
     
     
     

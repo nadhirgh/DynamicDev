@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Front.MenuController">
+    <stylesheets>
+        <URL value="@menu.css" />
+    </stylesheets>
+   <children>
+      <ImageView fitHeight="430.0" fitWidth="704.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@wall.jpg" />
+         </image>
+      </ImageView>
+      <Button layoutX="57.0" layoutY="233.0" mnemonicParsing="false" onAction="#handleBack" prefHeight="66.0" prefWidth="170.0" style="-fx-background-color: #fffa;" text="Admin" />
+      <Button fx:id="frontbtn" layoutX="490.0" layoutY="233.0" mnemonicParsing="false" onAction="#handleFront" prefHeight="66.0" prefWidth="170.0" style="-fx-background-color: #fffa;" text="Prof" />
+      <Button fx:id="frontbtn1" layoutX="271.0" layoutY="233.0" mnemonicParsing="false" onAction="#handleEleve" prefHeight="66.0" prefWidth="170.0" style="-fx-background-color: #fffa;" text="Eleve" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="67.0" layoutY="86.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../—Pngtree—vector%20administration%20icon_4090499.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="124.0" fitWidth="150.0" layoutX="282.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../797-7976123_student-emoji-icone-etudiant-png.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="124.0" fitWidth="128.0" layoutX="513.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../profhornet.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

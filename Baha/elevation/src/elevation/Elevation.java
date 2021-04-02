@@ -19,7 +19,7 @@ public class Elevation extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("Controller/Login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/Controller/Front/Menu.fxml"));
         
         Scene scene = new Scene(root);
         

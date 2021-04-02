@@ -19,7 +19,16 @@ public class Depense {
     String Source ;
     String Description ;
     String Justificatif ;
+    Utilisiateur user ;
 
+    public Utilisiateur getUser() {
+        return user;
+    }
+
+    public void setUser(Utilisiateur user) {
+        this.user = user;
+    }
+    
     
     public void remplirDepense(Depense d) {
         id = d.getId();

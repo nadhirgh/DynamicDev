@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" opacity="0.99" prefHeight="754.0" prefWidth="1033.0" stylesheets="@../assests/dark-theme.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.BackMenuController">
+   <children>
+      <ImageView fitHeight="764.0" fitWidth="1410.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@admin.jpg" />
+         </image>
+      </ImageView>
+      <VBox layoutX="14.0" layoutY="43.0" prefHeight="537.0" prefWidth="159.0">
+         <children>
+            <Button fx:id="depenseBtn" mnemonicParsing="false" onAction="#handleDepenseBtn" prefHeight="54.0" prefWidth="159.0" text="Gestion Depense" />
+            <Button fx:id="depenseBtn1" mnemonicParsing="false" onAction="#handleRevenuBtn" prefHeight="54.0" prefWidth="159.0" text="Gestion Revenue" />
+            <Button mnemonicParsing="false" onAction="#handleFinanceBtn" prefHeight="54.0" prefWidth="159.0" text="Rapport Financier" />
+            <Button mnemonicParsing="false" onAction="#handleReclamationBtn" prefHeight="54.0" prefWidth="159.0" text="Gestion Reclamation" />
+            <Button mnemonicParsing="false" onAction="#handleRecommendationBtn" prefHeight="54.0" prefWidth="159.0" text="Gestion Recommendation" />
+            <Button mnemonicParsing="false" onAction="#handleFideliteBtn" prefHeight="54.0" prefWidth="159.0" text="Raporrt de fidelité" />
+            <Separator orientation="VERTICAL" prefHeight="257.0" prefWidth="161.0" />
+            <Button mnemonicParsing="false" onAction="#handleDisconnectBtn" prefHeight="38.0" prefWidth="158.0" text="Se Déconnecter" />
+         </children>
+      </VBox>
+      <VBox layoutX="189.0" layoutY="22.0">
+         <children>
+            <Pane fx:id="PageContent" prefHeight="875.0" prefWidth="1139.0" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

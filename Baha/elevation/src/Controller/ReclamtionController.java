@@ -17,6 +17,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -43,14 +44,14 @@ public class ReclamtionController implements Initializable {
     private TableColumn<Reclamation, Date> tc_date;
     @FXML
     private TableColumn<Reclamation, String> tc_etat;
-    @FXML
     private TextField tfSujet;
-    @FXML
     private TextArea tfComment;
     @FXML
     private TextField tf_recherche;
     
     ReclamationService rs ;
+    @FXML
+    private ComboBox<String> cbEtat;
     
     /**
      * Initializes the controller class.
@@ -80,6 +81,10 @@ public class ReclamtionController implements Initializable {
             }
                   
                 });
+        
+        cbEtat.getItems().add("En cours de Traitement");
+        cbEtat.getItems().add("Traité");
+        cbEtat.getItems().add("Annulé");
     }    
 
     @FXML
@@ -88,24 +93,20 @@ public class ReclamtionController implements Initializable {
         Reclamation rec = new Reclamation();
         if(tb_table.getSelectionModel() != null)
         {    rec.remplirReclamation(tb_table.getSelectionModel().getSelectedItem()) ;
-            rec.setSujet(tfSujet.getText());
-            rec.setComment(tfComment.getText());
+            rec.setEtat(cbEtat.getSelectionModel().getSelectedItem());
             rs.modifier(rec);
             refresh_list(event);
             clearSelection(event);
         }
     }
 
-    @FXML
     private void clearSelection(ActionEvent event) {
         
         tb_table.getSelectionModel().clearSelection();
-        tfSujet.setText("");
-       tfComment.setText("");
+        
        
     }
 
-    @FXML
     private void Ajouter(ActionEvent event) {
         Reclamation rec = new Reclamation();
         rec.setComment(tfComment.getText());
@@ -127,7 +128,6 @@ public class ReclamtionController implements Initializable {
         tb_table.getItems().setAll(list);
     }
 
-    @FXML
     private void supprimer(ActionEvent event) {
          if(tb_table.getSelectionModel() != null)
         rs.supprimer(tb_table.getSelectionModel().getSelectedItem().getId()) ;
@@ -154,8 +154,7 @@ public class ReclamtionController implements Initializable {
     {
          if(tb_table.getSelectionModel() != null)
         {
-       tfSujet.setText(dep.getSujet());
-       tfComment.setText(dep.getComment());
+            cbEtat.getSelectionModel().select(dep.getEtat());
         }
     }
     

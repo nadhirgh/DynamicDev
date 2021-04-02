@@ -16,7 +16,19 @@ public class FicheFinance {
     Date date_creation ;
     String Description ;
     Double Total ;
+    Utilisiateur user ;
 
+    public Utilisiateur getUser() {
+        return user;
+    }
+
+    public void setUser(Utilisiateur user) {
+        this.user = user;
+    }
+
+    
+    
+    
     public int getId() {
         return id;
     }

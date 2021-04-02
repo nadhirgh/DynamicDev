@@ -6,7 +6,10 @@
 package Controller;
 
 import Entities.Revenu;
+import Entities.Utilisiateur;
 import Services.RevenuService;
+import Services.UtilisateurService;
+import Utils.PopUp;
 import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -20,6 +23,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
@@ -64,6 +68,10 @@ public class RevenuController implements Initializable {
     private TableColumn<Revenu, String> tc_justificatif;
     @FXML
     private TextField tf_recherche;
+    @FXML
+    private ComboBox<Utilisiateur> cbUser;
+
+        UtilisateurService us ;
 
 
     /**
@@ -73,6 +81,7 @@ public class RevenuController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         ds = new RevenuService();
+        us = new UtilisateurService();
         tc_valeur.setCellValueFactory(new PropertyValueFactory<>("valeur"));
         tc_date.setCellValueFactory(new PropertyValueFactory<>("date"));
         tc_id_finance.setCellValueFactory(new PropertyValueFactory<>("id_finance"));
@@ -95,7 +104,8 @@ public class RevenuController implements Initializable {
                   
                 });
         
-        
+             cbUser.getItems().setAll(us.getUtilisiateurs());
+
     }    
 
     @FXML
@@ -111,7 +121,21 @@ public class RevenuController implements Initializable {
         dep.setJustificatif(tfJustificatif.getText());
         dep.setSource(tfSource.getText());
         dep.setDescription(tfDescription.getText());
-        ds.ajouter(dep);
+        dep.setUser(cbUser.getSelectionModel().getSelectedItem());
+        
+         if(tfJustificatif.getText().isEmpty())
+            PopUp.Error("Champ Justificatif est vide");
+        else if(tfDescription.getText().isEmpty())
+            PopUp.Error("Champ  vide");
+         else if(tfSource.getText().isEmpty())
+            PopUp.Error("Champ  vide");
+         else 
+         {
+             ds.ajouter(dep);
+             PopUp.Success("Ajout avec Succes");
+         }
+        
+      
         refresh_list(event);
         clearSelection();
     }

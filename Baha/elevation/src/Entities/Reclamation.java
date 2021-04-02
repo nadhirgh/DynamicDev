@@ -17,7 +17,15 @@ public class Reclamation {
     String Sujet ;
     String Comment ;
     String Etat ;
+    Utilisiateur user ;
 
+    public Utilisiateur getUser() {
+        return user;
+    }
+
+    public void setUser(Utilisiateur user) {
+        this.user = user;
+    }
     
     public void remplirReclamation(Reclamation d) {
         id = d.getId();

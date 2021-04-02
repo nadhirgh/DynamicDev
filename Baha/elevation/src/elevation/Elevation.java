@@ -34,6 +34,7 @@ public class Elevation extends Application {
         this.primaryStage.setTitle("Acceuil");
         try {
             parentPage = FXMLLoader.load(getClass().getResource("/views/login.fxml"));
+       
         } catch (IOException ex) {
             System.out.println("txx");
             Logger.getLogger(Elevation.class.getName()).log(Level.SEVERE, null, ex);

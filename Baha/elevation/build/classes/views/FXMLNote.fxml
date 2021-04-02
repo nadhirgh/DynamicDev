@@ -15,8 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1195.0" stylesheets="@dashbord.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.FXMLNoteController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1228.0" stylesheets="@dashbord.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.FXMLNoteController">
    <top>
       <HBox style="-fx-background-color: white;" BorderPane.alignment="CENTER">
          <children>
@@ -172,23 +171,41 @@
             <AnchorPane id="AnchorPane" prefHeight="551.0" prefWidth="989.0">
                <children>
                   <TextField fx:id="tfexamenid" layoutX="185.0" layoutY="89.0" />
-                  <TextField fx:id="tfnotecc" layoutX="250.0" layoutY="154.0" prefHeight="26.0" prefWidth="84.0" />
-                  <TextField fx:id="tfnoteex" layoutX="250.0" layoutY="222.0" prefHeight="26.0" prefWidth="84.0" />
-                  <Label layoutX="74.0" layoutY="93.0" text="Id Examen" />
-                  <Label layoutX="74.0" layoutY="159.0" text="Note Controle Continue" />
-                  <Label layoutX="74.0" layoutY="227.0" text="Note Examen " />
-                  <Button id="sale" layoutX="46.0" layoutY="349.0" mnemonicParsing="false" onAction="#AjouterNote" stylesheets="@stylesheet00.css" text="Ajouter" />
+                  <TextField fx:id="tfnotecc" layoutX="259.0" layoutY="200.0" prefHeight="26.0" prefWidth="84.0" />
+                  <TextField fx:id="tfnoteex" layoutX="259.0" layoutY="257.0" prefHeight="26.0" prefWidth="84.0" />
+                  <Label layoutX="75.0" layoutY="92.0" text="Id Examen">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Label layoutX="65.0" layoutY="204.0" text="Note Controle Continue">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Label layoutX="85.0" layoutY="261.0" text="Note Examen ">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Button id="sale" layoutX="62.0" layoutY="349.0" mnemonicParsing="false" onAction="#AjouterNote" stylesheets="@stylesheet00.css" text="Ajouter" />
                   <Button id="sale" layoutX="154.0" layoutY="349.0" mnemonicParsing="false" onAction="#ModifierNote" stylesheets="@stylesheet00.css" text="Modifier" />
-                  <Button id="sale" layoutX="276.0" layoutY="349.0" mnemonicParsing="false" onAction="#deleteAction2" stylesheets="@stylesheet00.css" text="Supprimer" />
-                  <TableView fx:id="tableId2" layoutX="408.0" layoutY="40.0" prefHeight="373.0" prefWidth="558.0">
+                  <Button id="sale" layoutX="253.0" layoutY="349.0" mnemonicParsing="false" onAction="#deleteAction2" stylesheets="@stylesheet00.css" text="Supprimer" />
+                  <TableView fx:id="tableId2" layoutX="376.0" layoutY="47.0" prefHeight="374.0" prefWidth="650.0">
                      <columns>
-                        <TableColumn fx:id="tb_ex_id1" prefWidth="97.60003662109375" text="Examen id" />
-                        <TableColumn fx:id="tb_mt_id1" prefWidth="99.20001220703125" text="Note id" />
-                        <TableColumn fx:id="tb_nm_mt1" prefWidth="97.5999755859375" text="Nom matiere" />
-                        <TableColumn fx:id="tb_nt_cc" prefWidth="104.0" text="Note CC" />
-                        <TableColumn fx:id="tb_nt_ex" prefWidth="161.60009765625" text="Note Examen" />
+                        <TableColumn fx:id="tb_ex_id1" prefWidth="68.79998779296875" text="Exam id" />
+                        <TableColumn fx:id="tb_mt_id1" prefWidth="70.39996337890625" text="Note id" />
+                        <TableColumn fx:id="tb_nm_mt1" prefWidth="104.0" text="Nom matiere" />
+                        <TableColumn fx:id="tb_nt_cc" prefWidth="78.4000244140625" text="Note CC" />
+                        <TableColumn fx:id="tb_nt_ex" prefWidth="78.39996337890625" text="Note Ex" />
+                        <TableColumn fx:id="tb_nom_et" prefWidth="88.80010986328125" text="Nom" />
+                        <TableColumn fx:id="tb_pren_et" prefWidth="81.599853515625" text="Prenom" />
+                        <TableColumn fx:id="tb_etid" prefWidth="78.39999999999998" text="Id etud" />
                      </columns>
                   </TableView>
+                  <Label layoutX="73.0" layoutY="138.0" text="Id Etudiant">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tfetudid" layoutX="185.0" layoutY="136.0" />
                </children>
             </AnchorPane>
          </children>

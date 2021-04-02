@@ -21,12 +21,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -44,17 +46,17 @@ public class ExamsController implements Initializable {
     @FXML
     private ImageView eventPic;
     @FXML
-    private Text nbrParticip;
+    private Label nbrParticip;
     @FXML
     private Button inscritButton;
-    @FXML
-    private Button annulerButton;
     @FXML
     private TextField heure;
     @FXML
     private Text nomMatiere;
     @FXML
     private ImageView QRimages;
+    @FXML
+    private Button annulerButton1;
 
     /**
      * Initializes the controller class.

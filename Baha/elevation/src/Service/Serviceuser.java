@@ -18,4 +18,5 @@ public class Serviceuser {
     public Serviceuser() {
         cnx= Maconnexion.getInstance().getConnection();
     }
+    
 }

@@ -5,6 +5,7 @@
  */
 package controllers;
 
+import Entities.user;
 import Service.Servicelogin;
 import Utils.Maconnexion;
 import java.io.IOException;
@@ -60,7 +61,8 @@ public void validatelogin(ActionEvent event)
     
     Servicelogin sl=new Servicelogin(); 
     String verifylogin= "SELECT count(1) from elevation.user WHERE username= '"+tfusername.getText()+"' AND password = '"+tfpassword.getText()+"'";
-        
+    
+        user u=new user();
     
         try {
             Statement stm=cnx.createStatement();
@@ -68,19 +70,33 @@ public void validatelogin(ActionEvent event)
             
             while(queryResult.next()){
                 if (queryResult.getInt(1)==1){
+    String req= "SELECT * from elevation.user WHERE username= '"+tfusername.getText()+"' AND password = '"+tfpassword.getText()+"'";
+    Statement stm1=cnx.createStatement();
+            ResultSet rs =stm1.executeQuery(req);
+            while(rs.next()){
+                u.setId_etud(rs.getInt(1));
+                u.setNom(rs.getString(2));
+                u.setPrenom(rs.getString(3));
+                u.setUsername(rs.getString(4));
+                u.setPassword(rs.getString(5));
+            }
                     loginmessage.setText("Congratilations");
                     
-                     Parent page1 = null;
+                  FXMLLoader Loader=new FXMLLoader();
+        Loader.setLocation(getClass().getResource("/views/Examsview.fxml"));
         try {
-            page1= FXMLLoader.load(getClass().getResource("/views/Examsview.fxml"));
+            Loader.load();  
         } catch (IOException ex) {
-            Logger.getLogger(ExamsviewController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(loginController.class.getName()).log(Level.SEVERE, null, ex);
         }
-                Scene scene = new Scene(page1);
-                
-                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                stage.setScene(scene);
-                stage.show();
+        ExamsviewController iec=Loader.getController();
+        iec.us=u;
+        iec.setuserNamer(u.getNom());
+                Parent p=Loader.getRoot();
+                Stage ins=new Stage();
+                Scene scene = new Scene(p);
+                ins.setScene(scene);
+                ins.show();
                      
                 }
                     else{

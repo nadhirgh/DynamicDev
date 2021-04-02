@@ -7,6 +7,7 @@ package Service;
 
 import Entities.examen;
 import Entities.note;
+import Entities.user;
 import Services.IServiceNote;
 import Utils.Maconnexion;
 import java.sql.Connection;
@@ -36,7 +37,7 @@ public class ServiceNote implements IServiceNote{
        try {
            Statement stm=cnx.createStatement();
            
-           String query="INSERT INTO note (id_examen, note_cc, note_ex,nom_matiere) VALUES ('"+n.getId_examen()+"','"+n.getNote_cc()+"','"+n.getNote_ex()+"' ,(select nom_matiere from examen where examen.id_examen ="+n.getId_examen()+"))";
+           String query="INSERT INTO note (id_examen, note_cc, note_ex,nom_matiere,id_etud,nom,prenom) VALUES ('"+n.getId_examen()+"','"+n.getNote_cc()+"','"+n.getNote_ex()+"' ,(select nom_matiere from examen where examen.id_examen ="+n.getId_examen()+") ,'"+n.getId_etud()+"',(select nom from user where user.id_etud ="+n.getId_etud()+"),(select prenom from user where user.id_etud ="+n.getId_etud()+")   )";
            System.out.println(query);
            stm.executeUpdate(query);
        } catch (SQLException ex) {
@@ -60,15 +61,41 @@ public class ServiceNote implements IServiceNote{
         n.setNom_matiere(rst.getString("nom_matiere"));
         n.setNote_cc(rst.getString("note_cc"));
         n.setNote_ex(rst.getString("note_ex"));
+        n.setId_etud(rst.getInt("id_etud"));
+        n.setNom(rst.getString("nom"));
+        n.setPrenom(rst.getString("prenom"));
         
         notes.add(n);
         
         }
-        
+//        Afficheruser(id);
         
         return notes;
+        
+        
     }
    
+//   public ObservableList<user> Afficheruser(int id)throws SQLException{
+//       
+//            Statement stm= cnx.createStatement();
+//        
+//        String query1="select * from user where id_etud = "+id+" ";
+//        ResultSet rst1 =stm.executeQuery(query1);
+//        ObservableList<user>users= FXCollections.observableArrayList();
+//        while (rst1.next())
+//        {
+//        user us= new user();
+//        
+//        us.setNom(rst1.getString("nom"));
+//        us.setPrenom(rst1.getString("prenom"));
+//        users.add(us);
+//        
+//        }
+//        
+//        
+//        return users;
+//    }
+//   
    @Override
    public void updateNote(int id,note n){
         try {
@@ -81,6 +108,7 @@ public class ServiceNote implements IServiceNote{
         }
     }
 
+ 
 
 
     @Override

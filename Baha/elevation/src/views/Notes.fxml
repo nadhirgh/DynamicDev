@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="238.0" prefWidth="487.0" style="-fx-background-color: #FFA07A; -fx-background-radius: 5px;" stylesheets="@dashbord.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.NotesController">
+   <children>
+      <VBox alignment="CENTER" layoutY="-1.0" prefHeight="238.0" prefWidth="190.0" style="-fx-background-color: #D3D3D3;" styleClass="hover-fade" stylesheets="@dashbord.css">
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Text fx:id="dateLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="20/09/1998" />
+                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fx:id="detail" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" styleClass="cursor_hand">
+                           <image>
+                              <Image url="@../../../upgradi/src/images/iconfinder_ellipsis-h_1608674.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <ImageView fx:id="eventPic" fitHeight="100.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/exam-img.png" />
+               </image>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </ImageView>
+            <HBox alignment="CENTER" prefHeight="26.0" prefWidth="170.0">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="93.0" prefWidth="323.0">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <children>
+                  <Button fx:id="annulerButton" layoutX="100.0" layoutY="22.0" mnemonicParsing="false" onAction="#reclamer" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #F16767; -fx-background-radius: 8px; -fx-text-fill: white; -fx-font-family: Quicksar;" styleClass="cursor_hand" text="Reclamer">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <effect>
+            <DropShadow color="#7c7878" height="30.0" radius="12.0" width="20.0" />
+         </effect>
+      </VBox>
+      <Text layoutX="215.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bold; -fx-fill: #485460;" text="Durée" wrappingWidth="72.00000822544098">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Text>
+      <TextField fx:id="heure" accessibleRole="TEXT" disable="true" layoutX="348.0" layoutY="174.0" prefHeight="42.0" prefWidth="108.0" style="-fx-border-color: white; -fx-background-color: white; -fx-background-radius: 8px;" text=" 2 heures">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </TextField>
+      <Text fx:id="nomMatiere" layoutX="317.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bold; -fx-fill: #485460;" text="Java" textAlignment="CENTER" wrappingWidth="169.60000000000002">
+         <font>
+            <Font size="65.0" />
+         </font>
+      </Text>
+      <Text layoutX="206.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bold; -fx-fill: #485460;" text="Nom Matiere" wrappingWidth="90.39999999999998">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Text>
+      <Label layoutX="206.0" layoutY="93.0" text="Note Controle continue" textFill="WHITE">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="206.0" layoutY="119.0" text="Note Examen" textFill="WHITE">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="17.0" />
+         </font>
+      </Label>
+      <Text fx:id="ntcc" fill="WHITE" layoutX="430.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="15">
+         <font>
+            <Font name="Lucida Sans Unicode" size="20.0" />
+         </font>
+      </Text>
+      <Text fx:id="ntcex" fill="WHITE" layoutX="430.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="15">
+         <font>
+            <Font name="Lucida Sans Unicode" size="20.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

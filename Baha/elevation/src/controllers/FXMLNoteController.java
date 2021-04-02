@@ -7,6 +7,7 @@ package controllers;
 
 import Entities.examen;
 import Entities.note;
+import Entities.user;
 import Service.ServiceExamen;
 import Service.ServiceNote;
 import java.io.IOException;
@@ -34,6 +35,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import static jdk.nashorn.internal.runtime.Debug.id;
 import org.controlsfx.control.Notifications;
 
 /**
@@ -72,7 +74,15 @@ public class FXMLNoteController implements Initializable {
     private String n1=null;
     private String n2=null;
     private String n3=null;
-    
+    @FXML
+    private TextField tfetudid;
+    @FXML
+    private TableColumn<user, String> tb_nom_et;
+    @FXML
+    private TableColumn<user, String> tb_pren_et;
+    @FXML
+    private TableColumn<user, Integer> tb_etid;
+    private int id;
     
        private void handleButtonAction(ActionEvent event) {
         System.out.println("You clicked me!");
@@ -92,7 +102,10 @@ public class FXMLNoteController implements Initializable {
             tb_nm_mt1.setCellValueFactory(new PropertyValueFactory< examen,String>("nom_matiere"));
             tb_nt_cc.setCellValueFactory(new PropertyValueFactory< note,String>("note_cc"));
             tb_nt_ex.setCellValueFactory(new PropertyValueFactory< note,String>("note_ex"));
-             
+            tb_nom_et.setCellValueFactory(new PropertyValueFactory<user,String>("nom"));
+            tb_pren_et.setCellValueFactory(new PropertyValueFactory<user,String>("prenom"));
+            tb_etid.setCellValueFactory(new PropertyValueFactory<user,Integer>("id_etud"));
+            
             tableId2.setItems(sn.AfficherNote());
             
         } catch (SQLException ex) {
@@ -108,7 +121,7 @@ public class FXMLNoteController implements Initializable {
                     tfexamenid.setText(String.valueOf(selectedNote.getId_examen()));
                     tfnotecc.setText(selectedNote.getNote_cc());
                     tfnoteex.setText(selectedNote.getNote_ex());
-                    
+                    tfetudid.setText(String.valueOf(selectedNote.getId_etud()));
                     
                     selectedId2 = selectedNote.getId_note();
                     canModify = true;
@@ -125,6 +138,7 @@ public class FXMLNoteController implements Initializable {
         n.setId_examen(Integer.valueOf(tfexamenid.getText()));
         n.setNote_cc(tfnotecc.getText());
         n.setNote_ex(tfnoteex.getText());
+        n.setId_etud(Integer.valueOf(tfetudid.getText()));
         
         n2=tfnotecc.getText();
         n3=tfnoteex.getText();
@@ -160,6 +174,8 @@ public class FXMLNoteController implements Initializable {
            n.setId_examen(Integer.valueOf(tfexamenid.getText()));
         n.setNote_cc(tfnotecc.getText());
         n.setNote_ex(tfnoteex.getText());
+        n.setId_etud(Integer.valueOf(tfetudid.getText()));
+        
            notifmod();
             sn.updateNote(selectedId2, n);
             try {
@@ -209,17 +225,25 @@ public class FXMLNoteController implements Initializable {
 
     @FXML
     private void movetofront(MouseEvent event) {
-        Parent page1 = null;
+         user u=new user();
+        
+        FXMLLoader Loader=new FXMLLoader();
+        Loader.setLocation(getClass().getResource("/views/Examsview.fxml"));
         try {
-            page1= FXMLLoader.load(getClass().getResource("/views/HOME.fxml"));
+            Loader.load();  
         } catch (IOException ex) {
-            Logger.getLogger(HOMEController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(NotesviewController.class.getName()).log(Level.SEVERE, null, ex);
         }
-                Scene scene = new Scene(page1);
-                
-                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        ExamsviewController ien=Loader.getController();
+        ien.us=u;
+        ien.setuserNamer(u.getNom());
+                Parent ap=Loader.getRoot();
+                //Stage ins=new Stage();
+                                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+                Scene scene = new Scene(ap);
                 stage.setScene(scene);
-                stage.show();
+               stage.show();
     }
 
     @FXML

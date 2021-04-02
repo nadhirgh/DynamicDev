@@ -55,6 +55,11 @@ public class Utilisiateur {
     public void setRole(int Role) {
         this.Role = Role;
     }
+
+    @Override
+    public String toString() {
+        return id + "-" + Nom + " " + Prenom ;
+    }
       
       
 }

@@ -7,7 +7,9 @@ package Services;
 
 import IServices.IService;
 import Entities.Revenu;
+import Entities.Utilisiateur;
 import Utils.Maconnexion;
+import Utils.Session;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -31,7 +33,7 @@ public class RevenuService implements IService<Revenu>{
     private PreparedStatement preStm;
 
     private final String reqGet = " SELECT id , id_finance , valeur ,date ,source ,description , justificatif From revenu ";
-    private final String reqInsert = "INSERT INTO `revenu`(`id_finance`, `valeur`, `date`, `source`, `description`, `justificatif`) VALUES (?,?,?,?,?,?)";
+    private final String reqInsert = "INSERT INTO `revenu`(`id_finance`, `valeur`, `date`, `source`, `description`, `justificatif` , `idUtilisateur`) VALUES (?,?,?,?,?,?,?)";
     private final String reqUpdate = "UPDATE `revenu` SET `valeur`=?,`date`=?,`source`=?,`description`=?,`justificatif`=? WHERE `id`= ? ";
     private final String reqDel = "delete from revenu where id=?";
 
@@ -53,6 +55,7 @@ public class RevenuService implements IService<Revenu>{
             preStm.setString(4, entite.getSource());
             preStm.setString(5, entite.getDescription());
             preStm.setString(6, entite.getJustificatif());
+            preStm.setInt(7, entite.getUser().getId());
             preStm.execute();
         } catch (SQLException ex) {
             Logger.getLogger(RevenuService.class.getName()).log(Level.SEVERE, null, ex);
@@ -164,6 +167,31 @@ public class RevenuService implements IService<Revenu>{
         return total;
     }
     
+     
+     
+    public List<Revenu> RevenusByUser(Utilisiateur u) {
+        List<Revenu> Ann= new ArrayList<>();    
+        try {
+            stm=cnx.getConnection().createStatement();
+            ResultSet rs =stm.executeQuery(reqGet+ " where idUtilisateur = " + u.getId());
+            while(rs.next())
+            {
+                Revenu d = new Revenu();
+                d.setId(rs.getInt(1));
+                d.setId_finance(rs.getInt(2));
+                d.setValeur(rs.getDouble(3));
+                d.setDate(rs.getDate(4));
+                d.setSource(rs.getString(5));
+                d.setDescription(rs.getString(6));
+                d.setJustificatif(rs.getString(7));
+                Ann.add(d);}
+                return Ann;
+            } 
+        catch (SQLException ex) {
+             System.out.println("erreur lors de l'affichage de toutes les annonces " + ex.getMessage());
+        }
+        return null;
+    }
     
     
     

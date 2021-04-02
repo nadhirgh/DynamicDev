@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="PageContent" prefHeight="417.0" prefWidth="665.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Front.Eleve.PaimentController">
+   <children>
+      <Label layoutX="37.0" layoutY="47.0" text="Mes Paiments" textFill="#b2abab">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <TableView fx:id="table" layoutX="34.0" layoutY="109.0" prefHeight="200.0" prefWidth="596.0">
+        <columns>
+          <TableColumn fx:id="dateCol" prefWidth="106.0" text="Date" />
+          <TableColumn fx:id="SommeCol" prefWidth="95.0" text="Somme" />
+            <TableColumn fx:id="descriptionCol" prefWidth="388.0" text="Description" />
+        </columns>
+      </TableView>
+   </children>
+</Pane>

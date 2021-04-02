@@ -19,7 +19,15 @@ public class Revenu {
     String Source ;
     String Description ;
     String Justificatif ;
+    Utilisiateur user ;
 
+    public Utilisiateur getUser() {
+        return user;
+    }
+
+    public void setUser(Utilisiateur user) {
+        this.user = user;
+    }
     
     public void remplirRevenu(Revenu d) {
         id = d.getId();

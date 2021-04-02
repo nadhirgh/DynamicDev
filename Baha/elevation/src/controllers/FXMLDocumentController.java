@@ -6,6 +6,7 @@
 package controllers;
 
 import Entities.examen;
+import Entities.user;
 import static Service.Constants.projectPath;
 import Service.ServiceExamen;
 import com.itextpdf.text.BaseColor;
@@ -268,17 +269,25 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void movetofront(MouseEvent event) {
-        Parent page1 = null;
+        user u=new user();
+        
+        FXMLLoader Loader=new FXMLLoader();
+        Loader.setLocation(getClass().getResource("/views/Examsview.fxml"));
         try {
-            page1 = FXMLLoader.load(getClass().getResource("/views/HOME.fxml"));
+            Loader.load();  
         } catch (IOException ex) {
-            Logger.getLogger(HOMEController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(NotesviewController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        Scene scene = new Scene(page1);
+        ExamsviewController ien=Loader.getController();
+        ien.us=u;
+        ien.setuserNamer(u.getNom());
+                Parent ap=Loader.getRoot();
+                //Stage ins=new Stage();
+                                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
+                Scene scene = new Scene(ap);
+                stage.setScene(scene);
+               stage.show();
     }
 
     @FXML

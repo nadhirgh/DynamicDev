@@ -15,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1195.0" stylesheets="@dashbord.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.FXMLNoteController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1228.0" stylesheets="@dashbord.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.FXMLNoteController">
    <top>
       <HBox style="-fx-background-color: white;" BorderPane.alignment="CENTER">
          <children>
@@ -185,19 +185,19 @@
                      <font>
                         <Font size="14.0" />
                      </font></Label>
-                  <Button id="sale" layoutX="46.0" layoutY="349.0" mnemonicParsing="false" onAction="#AjouterNote" stylesheets="@stylesheet00.css" text="Ajouter" />
+                  <Button id="sale" layoutX="62.0" layoutY="349.0" mnemonicParsing="false" onAction="#AjouterNote" stylesheets="@stylesheet00.css" text="Ajouter" />
                   <Button id="sale" layoutX="154.0" layoutY="349.0" mnemonicParsing="false" onAction="#ModifierNote" stylesheets="@stylesheet00.css" text="Modifier" />
-                  <Button id="sale" layoutX="276.0" layoutY="349.0" mnemonicParsing="false" onAction="#deleteAction2" stylesheets="@stylesheet00.css" text="Supprimer" />
-                  <TableView fx:id="tableId2" layoutX="404.0" layoutY="47.0" prefHeight="374.0" prefWidth="570.0">
+                  <Button id="sale" layoutX="253.0" layoutY="349.0" mnemonicParsing="false" onAction="#deleteAction2" stylesheets="@stylesheet00.css" text="Supprimer" />
+                  <TableView fx:id="tableId2" layoutX="376.0" layoutY="47.0" prefHeight="374.0" prefWidth="650.0">
                      <columns>
-                        <TableColumn fx:id="tb_ex_id1" prefWidth="49.60003662109375" text="Exam id" />
-                        <TableColumn fx:id="tb_mt_id1" prefWidth="56.799957275390625" text="Note id" />
-                        <TableColumn fx:id="tb_nm_mt1" prefWidth="81.5999755859375" text="Nom matiere" />
-                        <TableColumn fx:id="tb_nt_cc" prefWidth="59.20001220703125" text="Note CC" />
-                        <TableColumn fx:id="tb_nt_ex" prefWidth="62.39996337890625" text="Note Ex" />
-                        <TableColumn prefWidth="104.0" text="Nom" />
-                        <TableColumn prefWidth="98.39990234375" text="Prenom" />
-                        <TableColumn prefWidth="55.2000732421875" text="Id etud" />
+                        <TableColumn fx:id="tb_ex_id1" prefWidth="68.79998779296875" text="Exam id" />
+                        <TableColumn fx:id="tb_mt_id1" prefWidth="70.39996337890625" text="Note id" />
+                        <TableColumn fx:id="tb_nm_mt1" prefWidth="104.0" text="Nom matiere" />
+                        <TableColumn fx:id="tb_nt_cc" prefWidth="78.4000244140625" text="Note CC" />
+                        <TableColumn fx:id="tb_nt_ex" prefWidth="78.39996337890625" text="Note Ex" />
+                        <TableColumn fx:id="tb_nom_et" prefWidth="88.80010986328125" text="Nom" />
+                        <TableColumn fx:id="tb_pren_et" prefWidth="81.599853515625" text="Prenom" />
+                        <TableColumn fx:id="tb_etid" prefWidth="78.39999999999998" text="Id etud" />
                      </columns>
                   </TableView>
                   <Label layoutX="73.0" layoutY="138.0" text="Id Etudiant">

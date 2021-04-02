@@ -6,6 +6,7 @@
 package controllers;
 
 import Entities.examen;
+import Entities.user;
 import Service.ServiceExamen;
 import java.io.IOException;
 import java.net.URL;
@@ -63,7 +64,12 @@ public class ExamsviewController implements Initializable {
 
     private final List<examen> examens = new ArrayList<>();
     private final List<examen> examsTrier = new ArrayList<>();
-    
+    public user us;
+    @FXML
+    private HBox movetonote;
+    public void setuserNamer(String nom){
+        this.iconUserDef.setText(nom);
+    }
     public void afficherAll() throws SQLException{
         ServiceExamen se = new ServiceExamen();
         
@@ -241,9 +247,9 @@ public class ExamsviewController implements Initializable {
     private void returnhome(MouseEvent event) {
         Parent page1 = null;
         try {
-            page1= FXMLLoader.load(getClass().getResource("/views/HOME.fxml"));
+            page1= FXMLLoader.load(getClass().getResource("/views/Examsview.fxml"));
         } catch (IOException ex) {
-            Logger.getLogger(HOMEController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ExamsviewController.class.getName()).log(Level.SEVERE, null, ex);
         }
                 Scene scene = new Scene(page1);
                 
@@ -251,7 +257,30 @@ public class ExamsviewController implements Initializable {
                 stage.setScene(scene);
                 stage.show();
     }
+
+    @FXML
+    private void movetonotes(MouseEvent event) {
+        user u=new user();
+        FXMLLoader Loader=new FXMLLoader();
+        Loader.setLocation(getClass().getResource("/views/Notesview.fxml"));
+        try {
+            Loader.load();  
+        } catch (IOException ex) {
+            Logger.getLogger(ExamsviewController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        NotesviewController ien=Loader.getController();
+        ien.us=u;
+        ien.setuserNamer(u.getNom());
+                Parent ap=Loader.getRoot();
+                //Stage ins=new Stage();
+                                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+                Scene scene = new Scene(ap);
+                stage.setScene(scene);
+               stage.show();
+
+
    
 
     
-}
+    }}

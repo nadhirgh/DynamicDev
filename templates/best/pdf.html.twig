@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mon Emploi</title>
+	<style>
+        table { text-align: center; margin: 0 auto; border-collapse: collapse; width: 100%;}
+        td, th{border: 1px solid; padding: 10px;}
+	</style>
+</head>
+<body>
+<h1 style="text-align: center">Mon Emploi du temps</h1>
+    <table> 
+        <tr>
+            <th>Time</th>
+            <th>08:00-10:00</th>
+            <th>10:00-12:00</th>
+            <th>PAUSE</th>
+            <th>14:00-16:00</th>
+            <th>16:00-18:00</th>
+        </tr>
+        {% for key, item_planing in planing %}
+            <tr>
+                <th scope="row">{{key}}</th>
+                {% for seance in item_planing %}
+                    <td><span>{{seance}}</span></td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

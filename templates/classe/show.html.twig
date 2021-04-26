@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block titre %}
+    Show Class
+{%endblock%}
+{% block test %}
+    <h1>Classe</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Idclasse</th>
+                <td>{{ classe.idclasse }}</td>
+            </tr>
+            <tr>
+                <th>Nomclasse</th>
+                <td>{{ classe.nomclasse }}</td>
+            </tr>
+            <tr>
+                <th>Nbr</th>
+                <td>{{ classe.nbr }}</td>
+            </tr>
+            <tr>
+                <th>Niveau</th>
+                <td>{{ classe.niveau }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('classe_index') }}" class="btn btn-info">back to list</a>
+
+
+{% endblock %}

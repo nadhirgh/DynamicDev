@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+{% block titre %}
+    Ajouter une Seance
+{%endblock%}
+{% block test %}
+
+    {{ include('seance/_form.html.twig') }}
+
+    <a href="{{ path('seance_index') }}"class="btn btn-info">back to list</a>
+{% endblock %}

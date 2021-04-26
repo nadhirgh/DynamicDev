@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block titre %}
+    Modifier une seance
+{%endblock%}
+
+{% block test %}
+
+    {{ include('seance/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('seance_index') }}"class="btn btn-info">back to list</a>
+
+{% endblock %}

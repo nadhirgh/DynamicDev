@@ -1,0 +1,32 @@
+{% extends 'basefront.html.twig' %}
+{% block titre %}
+Emploi du temps
+{%endblock%}
+{% block test %}
+<div class="wrapper">
+    <link rel="stylesheet" href="{{ asset ('assets/css/Untitled-1.css')}}">
+    <div class="grid">
+        <a href="?print=PDF" class="btn btn-primary ml-3 mb-2">PDF</a>
+        <table class="table table-bordered text-center"> 
+            <thead class="text-center">
+                <th>Time</th>
+                <th>08:00-10:00</th>
+                <th>10:00-12:00</th>
+                <th>PAUSE</th>
+                <th>14:00-16:00</th>
+                <th>16:00-18:00</th>
+            </thead>
+            <tbody>
+            {% for key, item_planing in planing %}
+                <tr>
+                    <th scope="row">{{key}}</th>
+                    {% for seance in item_planing %}
+                        <td><span>{{seance}}</span></td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+             </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

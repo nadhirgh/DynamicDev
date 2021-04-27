@@ -10,7 +10,9 @@ use App\Entity\PropertySearch;
 use App\Form\PropertySearchType;
 use App\Entity\PriceSearch;
 use App\Form\PriceSearchType;
+use Twilio\Rest\Client;
 
+use MercurySeries\FlashyBundle\FlashyNotifier;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -72,7 +74,7 @@ class SeanceController extends AbstractController
     /**
      * @Route("/new", name="seance_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, FlashyNotifier $flashy): Response
     {
         $seance = new Seance();
         $form = $this->createForm(SeanceType::class, $seance);
@@ -85,6 +87,7 @@ class SeanceController extends AbstractController
 
             return $this->redirectToRoute('seance_index');
         }
+        $flashy->success('Event created!', 'http://your-awesome-link.com');
 
         return $this->render('seance/new.html.twig', [
             'seance' => $seance,
@@ -141,7 +144,22 @@ class SeanceController extends AbstractController
             $entityManager->remove($seance);
             $entityManager->flush();
         }
+        // Your Account SID and Auth Token from twilio.com/console
+        $sid = 'AC3011c50f290ac621dc234181336d711f';
+        $token = '0ab08c0422a54c1fd08bfc2a100054d2';
+        $client = new Client($sid, $token);
 
+         // Use the client to do fun stuff like send text messages!
+        $client->messages->create(
+        // the number you'd like to send the message to
+            '+21622372878',
+            [
+                // A Twilio phone number you purchased at twilio.com/console
+                'from' => '+18327064871',
+                // the body of the text message you'd like to send
+                'body' => 'Bonjour Mr, votre seance le '.$seance->getDateseance().' heure'.$seance->getHeure().' classe'.$seance->getNomclasse().'est annulée'
+            ]
+        );
         return $this->redirectToRoute('seance_index');
     }
 

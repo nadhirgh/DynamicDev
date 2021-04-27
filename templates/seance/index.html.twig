@@ -6,17 +6,17 @@
     {% block test %}
 
     <div class="row">
-        <div class="col-8">
+        {#  <div class="col-8">
             {{form_start(form)}}
                 {{ form_widget(form) }}
-                <button class="btn btn-success">Rechercher</button>
+                <button class="btn btn-success">R</button>
             {{ form_end(form) }}
-        </div>
+        </div>#}
         <div class="col-4">
             <div class="dropdown mt-4">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Trier par
-                </button>
+                {# <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  T
+                </button>#}
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <a class="dropdown-item" href="?sortBy=idseance&sortType={{sortType}}">Idseance</a>
                   <a class="dropdown-item" href="?sortBy=nomclasse&sortType={{sortType}}">Nomclasse</a>
@@ -74,4 +74,10 @@
     </table>
 
     <a href="{{ path('seance_new') }}"class="btn btn-info">Create new</a>
+        <link rel="stylesheet" href="{{ asset('bundles/mercuryseriesflashy/css/flashy.css') }}">
+        <script src="{{ asset('bundles/mercuryseriesflashy/js/flashy.js') }}"></script>
+        <script src="//code.jquery.com/jquery.js"></script>
+        {{ include('@MercurySeriesFlashy/flashy.html.twig') }}
+        <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700' rel='stylesheet'>
 {% endblock %}

@@ -106,6 +106,9 @@
     "laminas/laminas-zendframework-bridge": {
         "version": "1.2.0"
     },
+    "mercuryseries/flashy-bundle": {
+        "version": "v3.0.2"
+    },
     "monolog/monolog": {
         "version": "1.26.0"
     },
@@ -540,6 +543,9 @@
     },
     "twig/twig": {
         "version": "v3.3.0"
+    },
+    "twilio/sdk": {
+        "version": "6.22.0"
     },
     "webmozart/assert": {
         "version": "1.10.0"

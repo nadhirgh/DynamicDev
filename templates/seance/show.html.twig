@@ -1,0 +1,39 @@
+{% extends 'baseBack.html.twig' %}
+
+{% block title %}Edit Depense{% endblock %}
+
+{% block body %}
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Idseance</th>
+                <td>{{ seance.idseance }}</td>
+            </tr>
+            <tr>
+                <th>IdEns</th>
+                <td>{{ seance.idens }}</td>
+            </tr>
+            <tr>
+                <th>Nomclasse</th>
+                <td>{{ seance.nomclasse }}</td>
+            </tr>
+            <tr>
+                <th>Matiere</th>
+                <td>{{ seance.matiere }}</td>
+            </tr>
+            <tr>
+                <th>Heure</th>
+                <td>{{ seance.heure }}</td>
+            </tr>
+            <tr>
+                <th>Dateseance</th>
+                <td>{{ seance.dateseance }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('seance_index') }}" class="btn btn-primary ">back to list</a>
+
+
+{% endblock %}

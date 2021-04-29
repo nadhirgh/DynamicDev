@@ -1,0 +1,10 @@
+{% extends 'baseBack.html.twig' %}
+
+{% block title %}Statestiques{% endblock %}
+
+{% block body %}
+
+<input type="hidden" id="eleveLabel" value="{{eleveLabel}}"> 
+<input type="hidden" id="eleveData" value="{{eleveData}}"> 
+<canvas id="myBarChart" width="100%;" style="height: 50px;"></canvas>
+{% endblock %}

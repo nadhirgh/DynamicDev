@@ -1,0 +1,136 @@
+{% extends 'baseBack.html.twig' %}
+
+{% block title %}Edit Depense{% endblock %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="col-8">
+            {{form_start(form)}}
+                {{ form_widget(form) }}
+                <button class="btn btn-success">Rechercher</button>
+            {{ form_end(form) }}
+        </div>
+        <div class="col-4">
+            <div class="dropdown mt-4">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Trier par
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="?sortBy=idseance&sortType={{sortType}}">Idseance</a>
+                  <a class="dropdown-item" href="?sortBy=nomclasse&sortType={{sortType}}">Nomclasse</a>
+                  <a class="dropdown-item" href="?sortBy=matiere&sortType={{sortType}}">Matiere</a>
+                  <a class="dropdown-item" href="?sortBy=heure&sortType={{sortType}}">Heure</a>
+                  <a class="dropdown-item" href="?sortBy=dateseance&sortType={{sortType}}">Dateseance</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <table class="table">
+        <tr>
+            <td style="width: 10%;">
+                <div class="dropdown mt-4">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{labelclasse}}
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="?classe=&matiere={{defaultmatiere}}&heure={{defaultheure}}">Toutes</a>
+                        {% for classe in dropvalues['classe'] %}
+                            <a class="dropdown-item" href="?classe={{classe}}&matiere={{defaultmatiere}}&heure={{defaultheure}}">{{classe}}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </td>
+            <td style="width: 10%;">
+                <div class="dropdown mt-4">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      {{labelmatiere}}
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="?classe={{defaultclasse}}&matiere=&heure={{defaultheure}}">Toutes</a>
+                        {% for matiere in dropvalues['matiere'] %}
+                        <a class="dropdown-item" href="?classe={{defaultclasse}}&matiere={{matiere}}&heure={{defaultheure}}">{{matiere}}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </td>
+            <td style="width: 10%;">
+                <div class="dropdown mt-4">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{labelheure}}
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="?classe={{defaultclasse}}&matiere={{defaultmatiere}}&heure=">Toutes</a>
+                        {% for heure in dropvalues['heure'] %}
+                        <a class="dropdown-item" href="?classe={{defaultclasse}}&matiere={{defaultmatiere}}&heure={{heure}}">{{heure}}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Idseance</th>
+                <th>Nomclasse</th>
+                <th>Matiere</th>
+                <th>Heure</th>
+                <th>Dateseance</th>
+                <th>idens</th>
+                <th>actions</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for seance in seances %}
+            <tr>
+                <td>{{ seance.idseance }}</td>
+                <td>{{ seance.nomclasse }}</td>
+                <td>{{ seance.matiere }}</td>
+                <td>{{ seance.heure }}</td>
+                <td>{{ seance.dateseance }}</td>
+                <td>{{ seance.idens }}</td>
+
+                <td>
+                    <a href="{{ path('seance_edit', {'idseance': seance.idseance}) }}" class="btn btn-primary ">edit</a>
+                </td>
+                <td>
+                    {{ include('seance/_delete_form.html.twig') }}
+                </td>
+                <td>
+                    <a href="{{ path('seance_show', {'idseance': seance.idseance}) }}" class="btn btn-inverse" >show</a>
+                </td>
+
+
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="navigation" style="align-content: center">
+        {{ knp_pagination_render(seances) }}
+    </div>
+
+    <a href="{{ path('seance_new') }}"class="btn btn-info">Create new</a>
+    <link rel="stylesheet" href="{{ asset('bundles/mercuryseriesflashy/css/flashy.css') }}">
+    <script src="{{ asset('bundles/mercuryseriesflashy/js/flashy.js') }}"></script>
+    <script src="//code.jquery.com/jquery.js"></script>
+    {{ include('@MercurySeriesFlashy/flashy.html.twig') }}
+    <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700' rel='stylesheet'>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'baseFront.html.twig' %}
+
+{% block body %}
+<div class="wrapper">
+    <link rel="stylesheet" href="{{ asset ('assets/css/Untitled-1.css')}}">
+    <div class="grid">
+        <a href="?print=PDF" class="btn btn-primary ml-3 mb-2">PDF</a>
+        <a href="#" id="printtable" class="btn btn-primary ml-3 mb-2">Print</a>
+        <div id="DivIdToPrint">
+            <table class="table table-bordered text-center"> 
+                <thead class="text-center">
+                    <th>Time</th>
+                    <th>08:00-10:00</th>
+                    <th>10:00-12:00</th>
+                    <th>PAUSE</th>
+                    <th>14:00-16:00</th>
+                    <th>16:00-18:00</th>
+                </thead>
+                <tbody>
+                {% for key, item_planing in planing %}
+                    <tr>
+                        <th scope="row">{{key}}</th>
+                        {% for seance in item_planing %}
+                            <td><span>{{seance}}</span></td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+                 </tbody>
+            </table>
+            <style>
+                table { text-align: center; margin: 0 auto; border-collapse: collapse; width: 100%;}
+                td, th{border: 1px solid; padding: 10px;}
+            </style>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

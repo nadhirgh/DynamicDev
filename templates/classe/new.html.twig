@@ -1,0 +1,13 @@
+{% extends 'baseBack.html.twig' %}
+
+{% block title %}Edit Depense{% endblock %}
+
+{% block body %}
+    <h1>Create new Classe</h1>
+
+    {{ include('classe/_form.html.twig') }}
+
+
+
+    <a href="{{ path('classe_index') }}" class="btn btn-info">back to list</a>
+{% endblock %}

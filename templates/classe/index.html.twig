@@ -1,0 +1,64 @@
+{% extends 'baseBack.html.twig' %}
+
+{% block title %}Seance{% endblock %}
+
+{% block body %}
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Idclasse</th>
+                <th>Nomclasse</th>
+                <th>Nbr</th>
+                <th>Niveau</th>
+                <th>actions</th>
+                <th></th>
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for classe in classes %}
+            <tr>
+                <td>{{ classe.idclasse }}</td>
+                <td>{{ classe.nomclasse }}</td>
+                <td>{{ classe.nbr }}</td>
+                <td>{{ classe.niveau }}</td>
+                <td>
+                    <a href="{{ path('classe_edit', {'idclasse': classe.idclasse}) }}"class="btn btn-primary">edit</a>
+
+
+                </td>
+                <td>
+                    {{ include('classe/_delete_form.html.twig') }}
+
+
+                </td>
+                <td>
+                    <a href="{{ path('classe_show', {'idclasse': classe.idclasse}) }}" class="btn btn-inverse" >show</a>
+
+
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ path('classe_new') }}"class="btn btn-info">Create new</a>
+
+
+    <div class="navigation" style="align-content: center">
+        {{ knp_pagination_render(classes) }}
+    </div>
+
+    <link rel="stylesheet" href="{{ asset('bundles/mercuryseriesflashy/css/flashy.css') }}">
+    <script src="{{ asset('bundles/mercuryseriesflashy/js/flashy.js') }}"></script>
+    <script src="//code.jquery.com/jquery.js"></script>
+    {{ include('@MercurySeriesFlashy/flashy.html.twig') }}
+    <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700' rel='stylesheet'>
+
+{% endblock %}
